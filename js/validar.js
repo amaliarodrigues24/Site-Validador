@@ -6,10 +6,12 @@
    Para acrescentar um cenário novo, basta uma linha aqui. */
 var CENARIOS = {
   diploma: {
-    '1': 'resultado-diploma.html?cenario=publicado',
-    '2': 'resultado-diploma.html?cenario=pendente',
-    '3': 'resultado-diploma-anulado.html',
-    '4': 'resultado-diploma-nao-existente.html'
+    // passa pela tela de carregamento antes do resultado (o destino é codificado
+    // para preservar o ?cenario= interno)
+    '1': 'carregando.html?destino=resultado-diploma.html%3Fcenario%3Dpublicado',
+    '2': 'carregando.html?destino=resultado-diploma.html%3Fcenario%3Dpendente',
+    '3': 'carregando.html?destino=resultado-diploma-anulado.html',
+    '4': 'carregando.html?destino=resultado-diploma-nao-existente.html'
   },
   historico: {
     // passa pela tela de carregamento antes do resultado
