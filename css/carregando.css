@@ -1,5 +1,6 @@
 /* Tela de carregamento entre o formulário e o resultado */
 
+.loading[hidden] { display: none; }   /* o hidden precisa vencer o display:grid abaixo */
 .loading {
   display: grid;
   justify-items: center;
@@ -51,4 +52,72 @@
 @media (max-width: 600px) {
   .loading { padding-block: var(--space-16) var(--space-10); }
   .spinner { width: 72px; height: 72px; border-width: 5px; }
+}
+
+/* ---------- skeleton (placeholder do resultado) ---------- */
+.skeleton { padding-top: var(--space-8); }
+.skeleton[hidden] { display: none; }
+
+/* animação shimmer: gradiente cinza que desliza */
+.sk,
+.sk-bar {
+  background: linear-gradient(90deg,
+    var(--color-divider) 25%,
+    var(--color-field-bg) 37%,
+    var(--color-divider) 63%);
+  background-size: 400% 100%;
+  animation: sk-shimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+@keyframes sk-shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sk, .sk-bar { animation: none; background: var(--color-divider); }
+}
+
+.sk-bar { height: 16px; }
+.sk-circle { border-radius: 50%; width: 28px; height: 28px; flex: none; }
+.sk-circle--lg { width: 50px; height: 50px; }
+.sk-stack { display: grid; gap: var(--space-2); flex: 1; min-width: 0; }
+
+.sk-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  padding: var(--space-6) var(--space-2);
+}
+.sk-downloads { display: flex; align-items: center; gap: var(--space-5); margin-top: var(--space-6); }
+.sk-pill { height: 44px; border-radius: var(--radius-sm); }
+
+.sk-strips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.sk-box { height: 64px; border-radius: var(--radius-sm); }
+.sk-box--tall { height: 120px; }
+
+.sk-detail {
+  display: grid;
+  grid-template-columns: 1fr 405px;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+.sk-col { display: grid; gap: var(--space-8); align-content: start; }
+.sk-group { display: grid; gap: var(--space-2); }
+.sk-side { display: grid; gap: var(--space-5); align-content: start; }
+.sk-list { display: grid; gap: var(--space-6); }
+.sk-item { display: flex; align-items: center; gap: var(--space-4); }
+
+@media (max-width: 905px) {
+  .sk-detail { grid-template-columns: 1fr; }
+  .sk-side { order: -1; }
+}
+@media (max-width: 600px) {
+  .sk-strips { grid-template-columns: 1fr; }
+  .sk-downloads { flex-wrap: wrap; }
 }

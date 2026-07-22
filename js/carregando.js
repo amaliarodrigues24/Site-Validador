@@ -14,7 +14,8 @@
     'resultado-diploma-nao-existente.html': 'Verificando Diploma'
   };
 
-  var ESPERA = 2500;   // ms — tempo de exibição do loading
+  var ESPERA_SPINNER  = 2000;   // ms — spinner "Verificando…"
+  var ESPERA_SKELETON = 1800;   // ms — placeholder do resultado
 
   var params = new URLSearchParams(location.search);
   var destino = params.get('destino') || '';
@@ -41,9 +42,17 @@
   document.querySelector('[data-titulo]').textContent = titulo;
   document.title = titulo + ' — Validador Cogna Educação';
 
+  // fase 1: spinner  →  fase 2: skeleton  →  resultado
   setTimeout(function () {
-    // replace (e não href) para o botão Voltar do navegador não cair
-    // de novo nesta tela e reiniciar o carregamento
-    location.replace(destino);
-  }, ESPERA);
+    var loading = document.querySelector('.loading');
+    var skeleton = document.querySelector('[data-skeleton]');
+    if (loading) loading.hidden = true;
+    if (skeleton) skeleton.hidden = false;
+
+    setTimeout(function () {
+      // replace (e não href) para o botão Voltar do navegador não cair
+      // de novo nesta tela e reiniciar o carregamento
+      location.replace(destino);
+    }, ESPERA_SKELETON);
+  }, ESPERA_SPINNER);
 })();
