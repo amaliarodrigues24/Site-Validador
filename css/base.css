@@ -1,0 +1,74 @@
+/* Base — reset leve e defaults. Editável à mão. */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin: 0; }
+
+/* :where() zera a especificidade — senão `ul[class]` venceria as classes
+   das próprias listas e comeria os espaçamentos definidos nelas. */
+:where(ul[class]) { list-style: none; margin: 0; padding: 0; }
+
+img, picture, svg { max-width: 100%; display: block; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;   /* o círculo decorativo vaza à direita de propósito */
+
+  /* empurra o rodapé para a base quando a página é curta */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Cresce o CONTEÚDO, não o <main> inteiro — assim a área decorativa
+   continua encostada no rodapé em páginas curtas. */
+body > main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+body > main > .container { flex: 1 0 auto; }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button { font: inherit; cursor: pointer; }
+
+/* foco visível para navegação por teclado — não estava no Figma,
+   mas sem isso o site fica inacessível */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.container {
+  width: 100%;   /* como item flex do <main>, sem isso o margin auto
+                    encolhe a caixa até o tamanho do conteúdo */
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* margens laterais por breakpoint, medidas nos frames do Figma */
+@media (max-width: 905px) { :root { --gutter: 24px; } }
+@media (max-width: 600px) { :root { --gutter: 16px; } }
+
+/* esconde visualmente mas mantém para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

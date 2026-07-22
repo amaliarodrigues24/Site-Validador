@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perguntas Frequentes — Validador Cogna Educação</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/validar.css">
+<link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+<a class="proto-badge" href="https://github.com" target="_blank" rel="noopener">PROTÓTIPO — não é o site oficial da Cogna</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="index.html">
+      <img src="assets/logo-cogna.svg" alt="Cogna Educação" width="112" height="40">
+    </a>
+    <div class="site-header__titles">
+      <p class="site-header__title">Validador de Diploma, Histórico Escolar e Currículo do Curso</p>
+      <p class="site-header__subtitle">Verifique a Autenticidade: Diplomas das Instituições Cogna</p>
+    </div>
+    <p class="badge">
+      <span class="badge__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </span>
+      <span>Ambiente Oficial Cogna Educação<br>Verificado e Seguro</span>
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="Você está aqui">
+      <ol>
+        <li><a href="index.html">Página Inicial</a></li>
+        <li aria-current="page">Perguntas Frequentes</li>
+      </ol>
+    </nav>
+
+    <a class="back-link" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M11 18l-6-6 6-6"/>
+      </svg>
+      Voltar
+    </a>
+
+    <div class="faq">
+
+      <div class="faq__intro">
+        <div class="faq__head">
+          <img class="faq__marks" src="assets/faq/icone.png" alt="" width="80" height="37">
+          <h1 class="faq__title">Perguntas Frequentes</h1>
+        </div>
+        <p class="faq__lead">Tire dúvidas sobre a validação de diploma, histórico escolar e
+          currículo do curso.</p>
+
+        <img class="faq__art" src="assets/faq/ilustracao.png" alt=""
+             width="344" height="277">
+      </div>
+
+      <div class="faq__list">
+        <div class="search">
+          <label class="search__label" for="busca-faq">Buscar nas perguntas frequentes</label>
+          <div class="search__box">
+            <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input class="search__input" type="search" id="busca-faq" placeholder="Label"
+                   autocomplete="off" data-busca>
+          </div>
+        </div>
+
+        <!-- As perguntas vêm do Figma. As RESPOSTAS não estavam no desenho
+             (todas aparecem fechadas), então os textos abaixo são provisórios. -->
+        <div class="accordion" data-accordion>
+
+          <section class="qa" data-qa>
+            <h2>
+              <button class="qa__question" type="button" aria-expanded="false"
+                      aria-controls="resp-1">
+                <span>O que é a data de colação de grau?</span>
+                <span class="qa__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+            </h2>
+            <div class="qa__answer" id="resp-1" hidden>
+              <p>TEXTO PROVISÓRIO — é a data da cerimônia oficial em que o aluno recebe o grau,
+                registrada no diploma. Ela costuma ser diferente da data de conclusão do curso
+                e da data de expedição do documento.</p>
+            </div>
+          </section>
+
+          <section class="qa" data-qa>
+            <h2>
+              <button class="qa__question" type="button" aria-expanded="false"
+                      aria-controls="resp-2">
+                <span>O que significa "Diploma Anulado"?</span>
+                <span class="qa__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+            </h2>
+            <div class="qa__answer" id="resp-2" hidden>
+              <p>TEXTO PROVISÓRIO — significa que o registro existe na base, mas foi cancelado
+                pela instituição emissora. Um diploma anulado não vale como comprovação de
+                titulação. Em caso de dúvida, procure a secretaria da instituição.</p>
+            </div>
+          </section>
+
+          <section class="qa" data-qa>
+            <h2>
+              <button class="qa__question" type="button" aria-expanded="false"
+                      aria-controls="resp-3">
+                <span>Por que a publicação no DOU aparece como pendente?</span>
+                <span class="qa__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+            </h2>
+            <div class="qa__answer" id="resp-3" hidden>
+              <p>TEXTO PROVISÓRIO — a publicação no Diário Oficial da União é uma etapa posterior
+                ao registro do diploma. Enquanto ela não sai, o status aparece como pendente —
+                isso não afeta a validade do registro.</p>
+            </div>
+          </section>
+
+        </div>
+
+        <p class="search__empty" data-vazio hidden>Nenhuma pergunta encontrada para essa busca.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="decor" aria-hidden="true">
+    <img class="decor__shape" src="assets/seta.svg" alt="" width="363" height="413">
+    <img class="decor__person" src="assets/ilustracao-container.svg" alt="" width="310" height="397">
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <img class="site-footer__logo" src="assets/logo-cogna.svg" alt="Cogna Educação"
+         width="224" height="80">
+    <ul class="social">
+      <li><a class="social__link" href="#" aria-label="Instagram da Cogna">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg></a></li>
+      <li><a class="social__link" href="#" aria-label="Facebook da Cogna">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4"/>
+          <path d="M14 8h-1.5a1.5 1.5 0 0 0-1.5 1.5V12m-1.5 0h4.5M13 12v6"/>
+        </svg></a></li>
+      <li><a class="social__link" href="#" aria-label="LinkedIn da Cogna">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4"/>
+          <path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4"/>
+        </svg></a></li>
+    </ul>
+    <p class="site-footer__legal">
+      © 2026 Cogna Educação - Todos os direitos reservados -
+      <a href="#">Portal de privacidade</a>
+    </p>
+    <p class="site-footer__badge">
+      <span aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </span>
+      Ambiente Oficial Cogna - Verificado e Seguro
+    </p>
+  </div>
+</footer>
+
+<script src="js/faq.js"></script>
+</body>
+</html>

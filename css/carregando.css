@@ -1,0 +1,54 @@
+/* Tela de carregamento entre o formulário e o resultado */
+
+.loading {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-block: var(--space-24, 96px) var(--space-16);
+  gap: var(--space-2);
+}
+
+.loading__title {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: var(--space-6);
+}
+.loading__step {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+.loading__step a { text-decoration: underline; }
+
+/* ---------- spinner ----------
+   Anel cinza fixo + arco azul girando. */
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid var(--color-divider);
+  border-bottom-color: var(--color-primary);
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* quem pediu menos movimento no sistema recebe uma pulsação discreta
+   em vez do giro contínuo */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: pulsar 1.6s ease-in-out infinite;
+    border-color: var(--color-primary);
+    opacity: .5;
+  }
+  @keyframes pulsar {
+    50% { opacity: 1; }
+  }
+}
+
+@media (max-width: 600px) {
+  .loading { padding-block: var(--space-16) var(--space-10); }
+  .spinner { width: 72px; height: 72px; border-width: 5px; }
+}

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1168 880" width="1168" height="880"
+     role="img" aria-label="Exemplo de verso de diploma com dados fictícios">
+  <!-- DOCUMENTO DE EXEMPLO — todos os dados são fictícios.
+       Substitui a imagem original, que continha CNPJ e nome de funcionária reais. -->
+  <style>
+    .t  { font-family: 'Public Sans', 'Helvetica Neue', Arial, sans-serif; fill: #2f3136; font-size: 15px; }
+    .b  { font-weight: 700; }
+  </style>
+
+  <rect width="1168" height="880" fill="#f7f9fc"/>
+
+  <g fill="#a9bdd8">
+    <path d="M0 150 L110 150 L28 295 L0 295 Z"/>
+    <path d="M0 260 L92 260 L10 405 L0 405 Z" opacity=".75"/>
+    <path d="M1168 430 L1058 430 L1140 575 L1168 575 Z"/>
+    <path d="M1168 540 L1076 540 L1158 685 L1168 685 Z" opacity=".75"/>
+  </g>
+
+  <rect x="32" y="30" width="1104" height="818" fill="none" stroke="#1b3f8f" stroke-width="2"/>
+
+  <text class="t" x="150" y="118">Curso: Superior de Tecnologia em Gastronomia</text>
+
+  <text class="t" x="150" y="182">Reconhecido pela Portaria nº 000 de 00/00/0000 - publicada no D.O.U 000, seção 1, pág. 00 de 00/00/0000</text>
+
+  <text class="t">
+    <tspan x="150" y="247">Centro Universitário Exemplo de Educação</tspan>
+    <tspan x="150" y="265">Exemplo Educacional Participações S/A</tspan>
+    <tspan x="150" y="283">CNPJ: 00.000.000/0001-00</tspan>
+    <tspan x="150" y="301">Credenciamento Portaria 000 de 00/00/0000 - publicada no D.O.U 000, seção 1, pág. 00 de 00/00/0000.</tspan>
+  </text>
+
+  <!-- linha destacada pela lupa: número de registro -->
+  <text class="t">
+    <tspan x="150" y="362">Diploma registrado sob nº 9687, Livro 5, Processo nº 9687, nos termos da Lei 9394 de</tspan>
+    <tspan x="150" y="382">20/12/1996 e Decreto nº 9.235 de 15/12/2017.</tspan>
+  </text>
+
+  <text class="t" x="150" y="492">Cidade Exemplo - UF, 00 de janeiro de 0000.</text>
+
+  <text class="t">
+    <tspan x="150" y="558">Nome da Gerente</tspan>
+    <tspan x="150" y="576">Gerente de Certificação e Diplomas</tspan>
+  </text>
+
+  <!-- QR ilustrativo: padrão decorativo, não codifica nada -->
+  <g transform="translate(895,645)">
+    <rect width="130" height="130" fill="#ffffff"/>
+    <g fill="#2f3136">
+      <rect x="12" y="12" width="30" height="30"/>
+      <rect x="18" y="18" width="18" height="18" fill="#ffffff"/>
+      <rect x="23" y="23" width="8" height="8"/>
+      <rect x="88" y="12" width="30" height="30"/>
+      <rect x="94" y="18" width="18" height="18" fill="#ffffff"/>
+      <rect x="99" y="23" width="8" height="8"/>
+      <rect x="12" y="88" width="30" height="30"/>
+      <rect x="18" y="94" width="18" height="18" fill="#ffffff"/>
+      <rect x="23" y="99" width="8" height="8"/>
+      <rect x="52" y="14" width="6" height="6"/><rect x="64" y="14" width="6" height="6"/>
+      <rect x="52" y="26" width="6" height="6"/><rect x="70" y="32" width="6" height="6"/>
+      <rect x="14" y="52" width="6" height="6"/><rect x="26" y="52" width="6" height="6"/>
+      <rect x="38" y="58" width="6" height="6"/><rect x="52" y="52" width="6" height="6"/>
+      <rect x="64" y="58" width="6" height="6"/><rect x="76" y="52" width="6" height="6"/>
+      <rect x="88" y="58" width="6" height="6"/><rect x="100" y="52" width="6" height="6"/>
+      <rect x="52" y="64" width="6" height="6"/><rect x="70" y="70" width="6" height="6"/>
+      <rect x="88" y="76" width="6" height="6"/><rect x="106" y="64" width="6" height="6"/>
+      <rect x="52" y="88" width="6" height="6"/><rect x="64" y="94" width="6" height="6"/>
+      <rect x="76" y="88" width="6" height="6"/><rect x="94" y="94" width="6" height="6"/>
+      <rect x="52" y="106" width="6" height="6"/><rect x="70" y="106" width="6" height="6"/>
+      <rect x="88" y="106" width="6" height="6"/><rect x="106" y="100" width="6" height="6"/>
+    </g>
+  </g>
+</svg>

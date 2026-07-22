@@ -1,0 +1,97 @@
+/* TOKENS — Validador Cogna
+ *
+ * ATENÇÃO: estes valores foram EXTRAÍDOS do PNG "Página Inicial1440 px.png",
+ * não vieram de um export de variáveis do Figma. As cores de área chapada são
+ * exatas (lidas pixel a pixel); o que é aproximado está marcado com "aprox".
+ *
+ * Quando o JSON da coleção correta aparecer (a que tem o azul #114abb),
+ * este arquivo deve ser substituído pelo gerado por gen_tokens.py.
+ */
+
+:root {
+  /* ---- tipografia ---- */
+  /* AGUARDANDO CONFIRMAÇÃO: a família não é identificável a partir do PNG.
+     Trocar aqui muda o site inteiro. */
+  --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --text-xl: 32px;   /* H1 da página */
+  --text-lg: 24px;   /* título de card */
+  --text-md: 16px;   /* corpo, links, título do header */
+  --text-sm: 14px;   /* aprox — textos menores do rodapé */
+  --text-xs: 12px;   /* labels em caixa alta, subtítulo do header */
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+
+  /* ---- cores: superfície ---- */
+  --color-background: #f9f8f8;   /* fundo da página */
+  --color-surface: #ffffff;      /* header, cards */
+
+  /* ---- cores: marca ---- */
+  --color-primary: #114abb;      /* botões, links, rodapé */
+  --color-on-primary: #ffffff;
+  --color-primary-subtle: #e7edf8;  /* fundo dos chips */
+  --color-primary-border: #bcccec;  /* borda dos chips */
+  --color-decorative: #e2e7f2;      /* círculo grande do fundo */
+  --color-accent: #ffad01;          /* amarelo da seta e da ilustração */
+
+  /* ---- cores: texto ---- */
+  --color-text: #2f3136;
+  --color-text-muted: #474b52;
+
+  /* ---- cores: aviso ---- */
+  --color-warning-bg: #fbf4d0;
+  --color-warning-text: #2e2705;
+  --color-warning-soft: #faf4e4;    /* cabeçalho do card "Pendente" */
+  --color-warning-border: #e2d3a4;
+  --color-warning-icon: #a97b00;
+
+  /* ---- formulários ----
+     Estimados a olho da tela "Validar Diploma", não amostrados. */
+  --color-field-bg: #f2f3f5;        /* caixa cinza que agrupa os campos */
+  --color-input-border: #d8dade;
+  --color-placeholder: #9aa0a6;
+  --color-info-bg: #eceefb;         /* faixa da dica ("Mais usado por quem…") */
+  --color-info-icon: #5b5bd6;
+  --color-disabled: #c7c9cf;
+  --color-on-disabled: #ffffff;
+  --color-success: #4caf50;
+  --color-success-bg: #e8f5e0;
+  --color-success-text: #2e7d32;   /* verde escuro: título e ícone sobre o fundo claro */
+  --color-error: #b3251e;
+  --color-error-bg: #fbe9e7;
+
+  /* ---- sombra ---- */
+  --shadow-card: 0 4px 24px rgba(17, 74, 187, .08);
+
+  /* ---- bordas ---- */
+  --color-border: #cfdbf1;       /* contorno dos cards */
+  --color-divider: #e9eaec;      /* linha divisória dentro do card */
+  --border-width: 1px;
+
+  /* ---- raio ---- */
+  /* aprox — medido a olho no PNG, ajustar se o Figma disser outro valor */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---- espaçamento ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- layout ----
+     Breakpoints do Figma: 1440 / 1240 / 905 / 600 / 360.
+     A margem lateral muda em 905 (60→24) e em 600 (24→16). */
+  --container: 1440px;   /* largura externa; com 60 de margem dá 1320 de conteúdo */
+  --gutter: 60px;
+  --header-height: 91px;
+}

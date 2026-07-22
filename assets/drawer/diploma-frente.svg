@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1169 881" width="1169" height="881"
+     role="img" aria-label="Exemplo de frente de diploma com dados fictícios">
+  <!-- DOCUMENTO DE EXEMPLO — todos os dados são fictícios.
+       Substitui a imagem original, que continha nome, RG e assinatura reais. -->
+  <style>
+    .t   { font-family: 'Public Sans', 'Helvetica Neue', Arial, sans-serif; fill: #2f3136; }
+    .b   { font-weight: 700; }
+    .ttl { font-size: 25px; }
+    .par { font-size: 17px; }
+    .nom { font-size: 26px; letter-spacing: .5px; }
+    .sml { font-size: 13px; }
+    .xs  { font-size: 11px; fill: #474b52; }
+    .sel { font-size: 8px; fill: #2f3136; }
+  </style>
+
+  <rect width="1169" height="881" fill="#f7f9fc"/>
+
+  <!-- chevrons decorativos -->
+  <g fill="#a9bdd8">
+    <path d="M0 190 L118 190 L36 335 L0 335 Z"/>
+    <path d="M0 300 L100 300 L18 445 L0 445 Z" opacity=".75"/>
+    <path d="M1169 500 L1051 500 L1133 645 L1169 645 Z"/>
+    <path d="M1169 610 L1069 610 L1151 755 L1169 755 Z" opacity=".75"/>
+    <path d="M1169 30 L1080 30 L1150 150 L1169 150 Z" opacity=".5"/>
+    <path d="M0 700 L90 700 L20 820 L0 820 Z" opacity=".5"/>
+  </g>
+
+  <rect x="32" y="32" width="1105" height="817" fill="none" stroke="#1b3f8f" stroke-width="2"/>
+
+  <text class="t b ttl" x="584" y="140" text-anchor="middle">Centro Universitário Exemplo de Educação</text>
+
+  <text class="t par" text-anchor="middle">
+    <tspan x="584" y="212">A Representante Legal da Mantenedora do Centro Universitário Exemplo de</tspan>
+    <tspan x="584" y="236">Educação no uso de suas atribuições legais e tendo em vista a conclusão do</tspan>
+    <tspan x="584" y="260">curso Superior de Tecnologia em Gastronomia em 14 de dezembro de 2024 e</tspan>
+    <tspan x="584" y="284">colação de grau em 11 de fevereiro de 2025, confere o título de</tspan>
+  </text>
+
+  <text class="t par" x="584" y="350" text-anchor="middle">Tecnóloga a</text>
+  <text class="t b nom" x="584" y="384" text-anchor="middle">MARIA EXEMPLO DA SILVA</text>
+
+  <text class="t par" text-anchor="middle">
+    <tspan x="584" y="456">Brasileira, natural do estado de exemplo, nascida em 00 de janeiro de 0000,</tspan>
+    <tspan x="584" y="480">RG 00.000.000 - SSP/XX, e outorga-lhe o presente Diploma, a fim de que possa</tspan>
+    <tspan x="584" y="504">exercer todos os direitos e prerrogativas legais dele decorrentes.</tspan>
+  </text>
+
+  <text class="t par" x="584" y="616" text-anchor="middle">Cidade Exemplo - UF, 00 de janeiro de 0000.</text>
+
+  <!-- selo (sem assinatura manuscrita) -->
+  <g transform="translate(140,745)">
+    <circle r="56" fill="none" stroke="#2f3136" stroke-width="1.5"/>
+    <circle r="48" fill="none" stroke="#2f3136" stroke-width="1"/>
+    <text class="t sel" y="-24" text-anchor="middle">REPÚBLICA FEDERATIVA</text>
+    <text class="t sel" y="-12" text-anchor="middle">DO BRASIL</text>
+    <text class="t sel" y="26" text-anchor="middle">SELO DE EXEMPLO</text>
+  </g>
+
+  <!-- linhas de assinatura vazias: a assinatura digitalizada foi removida -->
+  <g stroke="#2f3136" stroke-width="1">
+    <line x1="345" y1="752" x2="545" y2="752"/>
+    <line x1="640" y1="752" x2="855" y2="752"/>
+  </g>
+  <text class="t sml" x="445" y="772" text-anchor="middle">Nome da Representante Legal</text>
+  <text class="t sml" x="445" y="790" text-anchor="middle">Representante Legal</text>
+  <text class="t sml" x="747" y="772" text-anchor="middle">MARIA EXEMPLO DA SILVA</text>
+  <text class="t sml" x="747" y="790" text-anchor="middle">Tecnóloga</text>
+
+  <!-- rodapé: URL e código validador (fictícios) -->
+  <text class="t xs" x="1105" y="828" text-anchor="end">https://exemplo.com.br/diploma-digital/validador/documento/academico/</text>
+  <text class="t xs" x="1105" y="846" text-anchor="end">Código de validação: 000.000.0000000a0000</text>
+</svg>

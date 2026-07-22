@@ -1,0 +1,210 @@
+/* Layout compartilhado — header, rodapé, área decorativa e botões.
+   Usado por todas as páginas. */
+
+/* ---------- header ---------- */
+.site-header {
+  background: var(--color-surface);
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+}
+.site-header__brand {
+  flex: none;
+  padding-right: var(--space-6);
+  border-right: var(--border-width) solid var(--color-divider);
+}
+.site-header__titles { flex: 1; min-width: 0; }
+.site-header__title {
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+.site-header__subtitle {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-tight);
+  margin-top: var(--space-1);
+}
+
+.badge {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  line-height: var(--leading-tight);
+}
+.badge__icon {
+  display: grid;
+  place-items: center;
+  width: 40px; height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  flex: none;
+}
+.badge__icon svg { width: 22px; height: 22px; }
+
+/* ---------- botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border: var(--border-width) solid transparent;
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.btn--primary:hover { filter: brightness(1.1); }
+.btn--outline {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn--outline:hover { background: var(--color-primary-subtle); }
+.btn--block { width: 100%; }
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  background: var(--color-disabled);
+  color: var(--color-on-disabled);
+  cursor: not-allowed;
+  filter: none;
+}
+
+/* ---------- área decorativa ----------
+   .decor não pode criar contexto de empilhamento: o círculo fica ATRÁS
+   do rodapé e a ilustração NA FRENTE dele. */
+.decor {
+  position: relative;
+  /* Estende a área até a base do rodapé (281 da decor + 197 do rodapé) e recua
+     com margem negativa, para o rodapé ficar exatamente na mesma posição.
+     overflow:clip corta só o pedaço da ilustração que passaria do fim da página —
+     sem mover a ilustração. */
+  height: 478px;
+  margin-top: var(--space-6);
+  margin-bottom: -197px;
+  overflow: clip;
+}
+.decor__shape {
+  position: absolute;
+  right: 0;                /* o SVG já vem recortado na direita pelo Figma */
+  top: 0;
+  width: 363px; height: auto;
+  z-index: 0;
+}
+.decor__person {
+  position: absolute;
+  left: calc(50% + 113px);
+  transform: translateX(-50%);
+  top: 147px;
+  width: 310px; height: auto;
+  z-index: 3;
+}
+
+/* ---------- rodapé ---------- */
+.site-footer {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding-block: var(--space-10) var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-8) var(--space-6);
+  align-items: center;
+}
+/* PLACEHOLDER: inverte o logo escuro para branco.
+   Trocar pelo arquivo branco quando exportado. */
+.site-footer__logo {
+  width: 224px; height: auto;
+  filter: brightness(0) invert(1);
+}
+.social { display: flex; gap: var(--space-4); justify-self: end; }
+.social__link {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border: var(--border-width) solid currentColor;
+  border-radius: var(--radius-sm);
+  color: var(--color-on-primary);
+}
+.social__link:hover { background: rgba(255, 255, 255, .12); }
+.social__link svg { width: 22px; height: 22px; }
+
+.site-footer__legal,
+.site-footer__badge {
+  font-size: var(--text-sm);
+  color: var(--color-on-primary);
+}
+.site-footer__legal a { color: inherit; text-decoration: underline; }
+.site-footer__badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  justify-self: end;
+}
+.site-footer__badge svg { width: 20px; height: 20px; color: var(--color-accent); }
+
+/* ---------- responsivo ----------
+   Breakpoints do Figma: 1440 / 1240 / 905 / 600 / 360. */
+@media (max-width: 600px) {
+  .site-header { padding-block: var(--space-4); }
+  .site-header__inner { flex-wrap: wrap; gap: var(--space-3); }
+  .site-header__brand { border-right: 0; padding-right: 0; }
+  .site-header__titles { order: 3; flex-basis: 100%; }
+  .badge { margin-left: auto; font-size: 11px; gap: var(--space-2); }
+  .badge__icon { width: 32px; height: 32px; }
+  .badge__icon svg { width: 18px; height: 18px; }
+
+  .decor { height: 180px; margin-bottom: 0; overflow: visible; }  /* no mobile não há excesso a cortar */
+  .decor__shape { width: 220px; }
+  .decor__person { width: 200px; top: 95px; left: calc(50% + 40px); }
+
+  .site-footer__inner { grid-template-columns: 1fr; justify-items: start; }
+  .social, .site-footer__badge { justify-self: start; }
+}
+
+/* ---------- selo de protótipo (só na versão publicada) ----------
+   Deixa claro num link público que este não é o validador oficial. */
+.proto-badge {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #1d1d21;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
+  opacity: .92;
+}
+.proto-badge::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent, #ffad01);
+}
+.proto-badge:hover { opacity: 1; text-decoration: none; }

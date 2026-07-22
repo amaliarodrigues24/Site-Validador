@@ -1,0 +1,262 @@
+/* Telas de validação (diploma, histórico, currículo) */
+
+/* ---------- navegação de topo ---------- */
+.breadcrumb { padding-top: var(--space-8); }
+.breadcrumb ol {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0; padding: 0;
+  font-weight: 700;
+}
+.breadcrumb li + li::before {
+  content: "›";
+  margin-right: var(--space-3);
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+.breadcrumb a { color: var(--color-text); }
+.breadcrumb [aria-current] { color: var(--color-primary); }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  font-weight: 700;
+}
+.back-link svg { width: 22px; height: 22px; }
+
+/* ---------- duas colunas ---------- */
+.validar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+  margin-top: var(--space-10);
+}
+
+.validar__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.validar__head img { height: 52px; width: auto; }
+.validar__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+.validar__text { margin-bottom: var(--space-8); }
+
+.perks { display: grid; gap: var(--space-4); margin-bottom: var(--space-8); }
+.perks__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+}
+.perks__check {
+  display: grid;
+  place-items: center;
+  width: 28px; height: 28px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+.perks__check svg { width: 15px; height: 15px; }
+
+.legal {
+  border-left: 2px solid var(--color-input-border);
+  padding-left: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+/* ---------- painel do formulário ---------- */
+.panel {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-8);
+}
+.panel__lead { text-align: center; margin-bottom: var(--space-6); }
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: var(--space-6);
+}
+.tabs__tab {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid var(--color-divider);
+  padding: var(--space-4);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+.tabs__tab[aria-selected="true"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-info-bg);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-5);
+}
+.hint__icon { color: var(--color-info-icon); flex: none; }
+.hint__icon svg { width: 20px; height: 20px; }
+
+/* ---------- formulário ---------- */
+.form {
+  background: var(--color-field-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.field__label {
+  display: block;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+}
+.field__input {
+  width: 100%;
+  padding: var(--space-4);
+  border: var(--border-width) solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font: inherit;
+  color: var(--color-text);
+}
+.field__input::placeholder { color: var(--color-placeholder); }
+.field__input:focus-visible { border-color: var(--color-primary); }
+.field__help {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+}
+
+.form__aside {
+  text-align: right;
+  margin-top: var(--space-3);
+  font-weight: 700;
+}
+
+/* imitação visual de CAPTCHA — não verifica nada */
+.robot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: max-content;
+  margin: var(--space-8) auto;
+  padding: var(--space-5) var(--space-8);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.robot input { position: absolute; opacity: 0; width: 0; height: 0; }
+.robot__box {
+  width: 26px; height: 26px;
+  border: 2px solid var(--color-text-muted);
+  border-radius: 3px;
+  flex: none;
+  position: relative;
+}
+.robot input:checked + .robot__box {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.robot input:checked + .robot__box::after {
+  content: "";
+  position: absolute;
+  left: 8px; top: 3px;
+  width: 6px; height: 12px;
+  border: solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.robot input:focus-visible + .robot__box {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.robot__text { font-size: var(--text-lg); font-weight: 700; }
+
+.form__status {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+.form__status.is-error { color: var(--color-error); font-weight: 700; }
+
+/* ---------- estado de erro ---------- */
+.field__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-error);
+  margin-top: var(--space-2);
+}
+.field__error::before {
+  content: "!";
+  display: grid;
+  place-items: center;
+  width: 16px; height: 16px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--color-error);
+  color: #fff;
+  font-size: 11px;
+}
+.field__error[hidden] { display: none; }
+
+.field__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+}
+.robot.is-invalid { border-color: var(--color-error); }
+.robot.is-invalid .robot__box { border-color: var(--color-error); }
+.robot__error { justify-content: center; margin-top: calc(var(--space-8) * -1 + var(--space-2)); margin-bottom: var(--space-8); }
+
+.panel__divider {
+  border: 0;
+  border-top: var(--border-width) solid var(--color-divider);
+  margin-block: var(--space-6);
+}
+.panel__foot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.panel__foot svg { width: 20px; height: 20px; flex: none; }
+
+/* ---------- responsivo (adaptação minha, não veio do Figma) ---------- */
+@media (max-width: 905px) {
+  .validar { grid-template-columns: 1fr; gap: var(--space-10); }
+}
+@media (max-width: 600px) {
+  .form__row { grid-template-columns: 1fr; }
+  .panel { padding: var(--space-5); }
+  .robot { width: 100%; justify-content: center; padding-inline: var(--space-4); }
+  .tabs__tab { font-size: var(--text-sm); padding: var(--space-3) var(--space-2); }
+}

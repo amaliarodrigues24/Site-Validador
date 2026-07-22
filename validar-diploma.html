@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validar Diploma — Validador Cogna Educação</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/validar.css">
+<link rel="stylesheet" href="css/drawer.css">
+</head>
+<body>
+<a class="proto-badge" href="https://github.com" target="_blank" rel="noopener">PROTÓTIPO — não é o site oficial da Cogna</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="index.html">
+      <img src="assets/logo-cogna.svg" alt="Cogna Educação" width="112" height="40">
+    </a>
+    <div class="site-header__titles">
+      <p class="site-header__title">Validador de Diploma, Histórico Escolar e Currículo do Curso</p>
+      <p class="site-header__subtitle">Verifique a Autenticidade: Diplomas das Instituições Cogna</p>
+    </div>
+    <p class="badge">
+      <span class="badge__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </span>
+      <span>Ambiente Oficial Cogna Educação<br>Verificado e Seguro</span>
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="Você está aqui">
+      <ol>
+        <li><a href="index.html">Página Inicial</a></li>
+        <li aria-current="page">Validar Diploma</li>
+      </ol>
+    </nav>
+
+    <a class="back-link" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M11 18l-6-6 6-6"/>
+      </svg>
+      Alterar Documento
+    </a>
+
+    <div class="validar">
+
+      <div class="validar__intro">
+        <div class="validar__head">
+          <img src="assets/ilustracao-diploma.svg" alt="" width="39" height="52">
+          <h1 class="validar__title">Validar Diploma</h1>
+        </div>
+
+        <p class="validar__text">Para confirmar se um <strong>diploma de graduação</strong> é oficial,
+          basta preencher os campos ao lado. Nosso sistema fará uma consulta automática e segura em
+          nosso registro oficial para validar o documento na hora.</p>
+
+        <ul class="perks">
+          <li class="perks__item">
+            <span class="perks__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4 10-10"/></svg>
+            </span>
+            Consulta direta na base oficial de registro
+          </li>
+          <li class="perks__item">
+            <span class="perks__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4 10-10"/></svg>
+            </span>
+            Dados sensíveis protegidos (LGPD)
+          </li>
+          <li class="perks__item">
+            <span class="perks__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                   stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4 10-10"/></svg>
+            </span>
+            Resultado em segundos
+          </li>
+        </ul>
+
+        <p class="legal">Atendendo à Portaria nº 554, de 11 de março de 2019, e à Nota Técnica
+          nº 13/2019/DIFES/SESU, a emissão e o registro dos diplomas de graduação deverão ser
+          realizados por meio digital a partir de 01/01/2022. Mais informações em
+          <a href="https://portal.mec.gov.br/diplomadigital" target="_blank"
+             rel="noopener">portal.mec.gov.br/diplomadigital</a>.</p>
+      </div>
+
+      <section class="panel" aria-label="Formulário de verificação">
+        <p class="panel__lead">Escolha o método de verificação mais fácil para você:</p>
+
+        <div class="tabs" role="tablist">
+          <button class="tabs__tab" role="tab" id="tab-registro"
+                  aria-controls="painel-registro" aria-selected="true">Número de Registro</button>
+          <button class="tabs__tab" role="tab" id="tab-codigo"
+                  aria-controls="painel-codigo" aria-selected="false">Código de Validação</button>
+        </div>
+
+        <!-- ---------- método 1: número de registro ---------- -->
+        <div class="tabs__panel" role="tabpanel" id="painel-registro" aria-labelledby="tab-registro">
+          <p class="hint">
+            <span class="hint__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="3" width="16" height="18" rx="2"/>
+                <path d="M8 8h8M8 12h8M8 16h5"/>
+              </svg>
+            </span>
+            Mais usado por quem tem o diploma físico (impresso em papel).
+          </p>
+
+          <form class="form" data-form="diploma" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="data-colacao">Data de Colação de Grau</label>
+                <input class="field__input" type="date" id="data-colacao" name="data"
+                       required aria-describedby="ajuda-data">
+                <p class="field__help" id="ajuda-data">Verifique a data no seu diploma</p>
+                <p class="field__error" id="erro-data" hidden>Informe a data de colação de grau</p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="num-registro">Número de registro</label>
+                <input class="field__input" type="text" id="num-registro" name="registro"
+                       placeholder="SRD_00-00" required aria-describedby="ajuda-registro">
+                <p class="field__help" id="ajuda-registro">Exs: SRD_92-919; 0987;</p>
+                <p class="field__error" id="erro-registro" hidden>Informe o número de registro</p>
+              </div>
+            </div>
+
+            <p class="form__aside">
+              <a href="#" data-abre-drawer="drawer-dados">Onde encontro esses dados?</a>
+            </p>
+
+            <!-- Isto imita um CAPTCHA só visualmente. Não é verificação real. -->
+            <label class="robot">
+              <input type="checkbox" name="robot" required>
+              <span class="robot__box" aria-hidden="true"></span>
+              <span class="robot__text">Não sou um robô</span>
+            </label>
+            <p class="field__error robot__error" id="erro-robot" hidden>Confirme que você não é um robô</p>
+
+            <!-- aria-disabled em vez de disabled: parece desabilitado mas
+                 continua clicável, para o clique disparar os erros -->
+            <button class="btn btn--primary btn--block" type="submit"
+                    aria-disabled="true">Verificar Diploma</button>
+            <p class="form__status" data-status>Preencha os campos acima para verificar o diploma</p>
+          </form>
+        </div>
+
+        <!-- ---------- método 2: código de validação ---------- -->
+        <div class="tabs__panel" role="tabpanel" id="painel-codigo"
+             aria-labelledby="tab-codigo" hidden>
+          <p class="hint">
+            <span class="hint__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="3" width="16" height="18" rx="2"/>
+                <path d="M8 8h8M8 12h8M8 16h5"/>
+              </svg>
+            </span>
+            Mais usado por quem recebeu o diploma em versão digital.
+          </p>
+
+          <form class="form" data-form="diploma" novalidate>
+            <div class="field">
+              <label class="field__label" for="cod-validacao">Código de validação</label>
+              <input class="field__input" type="text" id="cod-validacao" name="codigo"
+                     placeholder="0000-0000-0000" required aria-describedby="ajuda-codigo">
+              <p class="field__help" id="ajuda-codigo">O código aparece no rodapé do documento digital</p>
+              <p class="field__error" id="erro-codigo" hidden>Informe o código de validação</p>
+            </div>
+
+            <p class="form__aside">
+              <a href="#" data-abre-drawer="drawer-codigo">Onde encontro o código?</a>
+            </p>
+
+            <label class="robot">
+              <input type="checkbox" name="robot" required>
+              <span class="robot__box" aria-hidden="true"></span>
+              <span class="robot__text">Não sou um robô</span>
+            </label>
+            <p class="field__error robot__error" id="erro-robot-2" hidden>Confirme que você não é um robô</p>
+
+            <button class="btn btn--primary btn--block" type="submit"
+                    aria-disabled="true">Verificar Diploma</button>
+            <p class="form__status" data-status>Preencha os campos acima para verificar o diploma</p>
+          </form>
+        </div>
+
+        <hr class="panel__divider">
+
+        <p class="panel__foot">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="10" width="16" height="11" rx="2"/>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+          </span>
+          Consulta protegida — dados pessoais aparecem parcialmente ocultos, conforme a LGPD.
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="decor" aria-hidden="true">
+    <img class="decor__shape" src="assets/seta.svg" alt="" width="363" height="413">
+    <img class="decor__person" src="assets/ilustracao-container.svg" alt="" width="310" height="397">
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <img class="site-footer__logo" src="assets/logo-cogna.svg" alt="Cogna Educação"
+         width="224" height="80">
+    <ul class="social">
+      <li><a class="social__link" href="#" aria-label="Instagram da Cogna">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg></a></li>
+      <li><a class="social__link" href="#" aria-label="Facebook da Cogna">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4"/>
+          <path d="M14 8h-1.5a1.5 1.5 0 0 0-1.5 1.5V12m-1.5 0h4.5M13 12v6"/>
+        </svg></a></li>
+      <li><a class="social__link" href="#" aria-label="LinkedIn da Cogna">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4"/>
+          <path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4"/>
+        </svg></a></li>
+    </ul>
+    <p class="site-footer__legal">
+      © 2026 Cogna Educação - Todos os direitos reservados -
+      <a href="#">Portal de privacidade</a>
+    </p>
+    <p class="site-footer__badge">
+      <span aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </span>
+      Ambiente Oficial Cogna - Verificado e Seguro
+    </p>
+  </div>
+</footer>
+
+<!-- ============ drawers "onde encontrar" ============ -->
+<div class="drawer-backdrop" data-drawer-backdrop></div>
+
+<!-- 1) aba Número de Registro -->
+<aside class="drawer" id="drawer-dados" role="dialog" aria-modal="true"
+       aria-labelledby="drawer-dados-titulo" aria-hidden="true" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="drawer-dados-titulo">Onde encontrar os dados?</h2>
+    <button class="drawer__close" type="button" data-fecha-drawer aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__body">
+    <section class="spot">
+      <h3 class="spot__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2"/>
+          <path d="M3 10h18M8 3v4M16 3v4"/>
+        </svg>
+        Data de colação de grau
+      </h3>
+      <p class="spot__where">Frente do Diploma</p>
+
+      <figure class="spot__figure">
+        <img src="assets/drawer/diploma-frente.svg"
+             alt="Frente de um diploma, com a data de colação de grau no primeiro parágrafo"
+             width="1169" height="881">
+        <span class="spot__lens" aria-hidden="true"
+              style="background-image: url('assets/drawer/diploma-frente.svg');
+                     --x: 83%; --y: 28%; --zoom: 4;
+                     --lupa-x: 88%; --lupa-y: 40%;"></span>
+      </figure>
+
+      <p class="spot__text">Você encontra esta data no primeiro parágrafo do seu diploma
+        (ex: 15 de janeiro de 2026).</p>
+    </section>
+
+    <section class="spot">
+      <h3 class="spot__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="M7 9h6M7 13h4M15.5 14.5l1.5 1.5 3-3"/>
+        </svg>
+        Número de registro
+      </h3>
+      <p class="spot__where">Verso do Diploma</p>
+
+      <figure class="spot__figure">
+        <img src="assets/drawer/diploma-verso.svg"
+             alt="Verso de um diploma, com a frase diploma registrado sob número"
+             width="1168" height="880">
+        <span class="spot__lens" aria-hidden="true"
+              style="background-image: url('assets/drawer/diploma-verso.svg');
+                     --x: 28%; --y: 41%; --zoom: 4;
+                     --lupa-x: 32%; --lupa-y: 56%;"></span>
+      </figure>
+
+      <p class="spot__text">Verifique o verso do seu diploma. Você verá a frase:
+        <strong><em>"diploma registrado sob nº…"</em></strong>. O código que aparece logo em
+        seguida é o seu número de registro (que pode conter letras e números, como no formato
+        SRD_00-000). Digite-o exatamente como está impresso.</p>
+    </section>
+
+    <img class="drawer__art" src="assets/drawer/duvida.svg" alt="" width="368" height="339">
+  </div>
+</aside>
+
+<!-- 2) aba Código de Validação -->
+<aside class="drawer" id="drawer-codigo" role="dialog" aria-modal="true"
+       aria-labelledby="drawer-codigo-titulo" aria-hidden="true" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="drawer-codigo-titulo">Onde encontrar o código validador?</h2>
+    <button class="drawer__close" type="button" data-fecha-drawer aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__body">
+    <section class="spot">
+      <h3 class="spot__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2"/>
+          <path d="M3 10h18M8 3v4M16 3v4"/>
+        </svg>
+        Código validador
+      </h3>
+      <p class="spot__where">Frente do Diploma</p>
+
+      <figure class="spot__figure">
+        <img src="assets/drawer/diploma-frente.svg"
+             alt="Frente de um diploma, com o código de validação no canto inferior direito"
+             width="1169" height="881">
+        <span class="spot__lens" aria-hidden="true"
+              style="background-image: url('assets/drawer/diploma-frente.svg');
+                     --x: 78%; --y: 98%; --zoom: 4;
+                     --lupa-x: 86%; --lupa-y: 98%;"></span>
+      </figure>
+
+      <p class="spot__text">O Código de Validação pode ser encontrado no
+        <strong>canto inferior direito</strong> da frente do diploma. Ele é um código de no
+        mínimo 14 caracteres.</p>
+    </section>
+
+    <img class="drawer__art" src="assets/drawer/duvida.svg" alt="" width="368" height="339">
+  </div>
+</aside>
+
+<script src="js/validar.js"></script>
+<script src="js/drawer.js"></script>
+</body>
+</html>

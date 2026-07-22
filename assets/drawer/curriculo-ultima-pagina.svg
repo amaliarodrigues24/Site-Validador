@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1169 500" width="1169" height="500"
+     role="img" aria-label="Exemplo da última página de um currículo de curso com dados fictícios">
+  <!-- DOCUMENTO DE EXEMPLO — dados fictícios. -->
+  <style>
+    .t  { font-family: 'Public Sans','Helvetica Neue',Arial,sans-serif; fill:#2f3136; }
+    .h  { font-size:12px; font-weight:700; }
+    .c  { font-size:10px; }
+    .s  { font-size:9px; fill:#474b52; }
+    .code { font-size:12px; font-weight:700; }
+  </style>
+
+  <rect width="1169" height="500" fill="#ffffff"/>
+  <rect x="1" y="1" width="1167" height="498" fill="none" stroke="#d8dade" stroke-width="1"/>
+
+  <!-- Critérios de Integralização -->
+  <rect x="40" y="30" width="1089" height="22" fill="#eef1f6"/>
+  <text class="t h" x="584" y="45" text-anchor="middle">Critérios de Integralização</text>
+
+  <rect x="40" y="58" width="1089" height="20" fill="#f2f3f5"/>
+  <text class="t h" x="584" y="72" text-anchor="middle">Rótulos</text>
+
+  <!-- cabeçalho da tabela -->
+  <g class="t s">
+    <text x="70" y="98">Código</text>
+    <text x="330" y="98">Unidade Curricular</text>
+    <text x="720" y="98">Etiquetas</text>
+    <text x="850" y="98">CH Mín</text>
+    <text x="960" y="98">CH Máx</text>
+    <text x="1060" y="98">CH pr Total</text>
+  </g>
+
+  <g class="t c">
+    <line x1="40" y1="108" x2="1129" y2="108" stroke="#e9eaec"/>
+    <text x="72" y="124">5</text>
+    <text x="330" y="124">Trabalho de Conclusão de Curso</text>
+    <text x="736" y="124">—</text><text x="862" y="124">320</text><text x="972" y="124">320</text><text x="1088" y="124">—</text>
+    <line x1="40" y1="136" x2="1129" y2="136" stroke="#e9eaec"/>
+    <text x="70" y="152">10</text>
+    <text x="330" y="152">Atividade Complementar</text>
+    <text x="736" y="152">—</text><text x="862" y="152">120</text><text x="972" y="152">120</text><text x="1088" y="152">—</text>
+    <line x1="40" y1="164" x2="1129" y2="164" stroke="#e9eaec"/>
+    <text x="72" y="180">1</text>
+    <text x="330" y="180">Disciplina</text>
+    <text x="736" y="180">—</text><text x="858" y="180">1340</text><text x="968" y="180">1340</text><text x="1088" y="180">—</text>
+  </g>
+
+  <!-- Expressões -->
+  <rect x="40" y="210" width="1089" height="22" fill="#eef1f6"/>
+  <text class="t h" x="584" y="225" text-anchor="middle">Expressões</text>
+
+  <!-- rodapé: validação + código (canto inferior esquerdo) + QR -->
+  <text class="t s" x="40" y="440">Para verificar a autenticidade acesse https://exemplo.com.br/validador e informe o código de validação.</text>
+  <text class="t code" x="40" y="462" fill="#2f3136">000.bca0000a00a00</text>
+  <text class="t s" x="1129" y="440" text-anchor="end">Página 3 de 3</text>
+
+  <g transform="translate(1020,300)">
+    <rect width="96" height="96" fill="#ffffff"/>
+    <g fill="#2f3136">
+      <rect x="8" y="8" width="24" height="24"/><rect x="13" y="13" width="14" height="14" fill="#fff"/><rect x="17" y="17" width="6" height="6"/>
+      <rect x="64" y="8" width="24" height="24"/><rect x="69" y="13" width="14" height="14" fill="#fff"/><rect x="73" y="17" width="6" height="6"/>
+      <rect x="8" y="64" width="24" height="24"/><rect x="13" y="69" width="14" height="14" fill="#fff"/><rect x="17" y="73" width="6" height="6"/>
+      <rect x="40" y="12" width="5" height="5"/><rect x="52" y="20" width="5" height="5"/><rect x="40" y="40" width="5" height="5"/>
+      <rect x="52" y="48" width="5" height="5"/><rect x="64" y="44" width="5" height="5"/><rect x="76" y="52" width="5" height="5"/>
+      <rect x="40" y="64" width="5" height="5"/><rect x="52" y="72" width="5" height="5"/><rect x="64" y="80" width="5" height="5"/>
+      <rect x="76" y="68" width="5" height="5"/><rect x="12" y="40" width="5" height="5"/><rect x="24" y="52" width="5" height="5"/>
+    </g>
+  </g>
+</svg>
