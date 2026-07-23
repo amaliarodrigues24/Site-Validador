@@ -251,6 +251,9 @@
 .panel__foot svg { width: 20px; height: 20px; flex: none; }
 
 /* ---------- responsivo (adaptação minha, não veio do Figma) ---------- */
+/* o seletor de método em etapas é só do mobile — escondido por padrão */
+.method-mobile { display: none; }
+
 @media (max-width: 905px) {
   .validar { grid-template-columns: 1fr; gap: var(--space-10); }
 }
@@ -259,4 +262,68 @@
   .panel { padding: var(--space-5); }
   .robot { width: 100%; justify-content: center; padding-inline: var(--space-4); }
   .tabs__tab { font-size: var(--text-sm); padding: var(--space-3) var(--space-2); }
+}
+
+/* ====== ≤480 (frame de 360): abas viram escolha em duas etapas ======
+   Passo 1: escolher o método (rádio) + Continuar.
+   Passo 2 (.panel--picked): Voltar + método escolhido + campos. */
+@media (max-width: 480px) {
+  .tabs { display: none; }
+  .method-mobile { display: block; margin-bottom: var(--space-5); }
+
+  /* passo 1 — some os formulários, aparece o seletor */
+  .panel:not(.panel--picked) .tabs__panel { display: none; }
+  .panel:not(.panel--picked) .method-back,
+  .panel:not(.panel--picked) .method-current { display: none; }
+
+  /* passo 2 — some o seletor e o "Escolha o método…" */
+  .panel--picked .method-picker,
+  .panel--picked .panel__lead { display: none; }
+
+  .method-picker { display: grid; gap: var(--space-3); }
+  .method-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    border: var(--border-width) solid var(--color-input-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+  .method-option:has(input:checked) { border-color: var(--color-primary); }
+  .method-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .method-option__radio {
+    width: 22px; height: 22px;
+    flex: none;
+    border: 2px solid var(--color-text-muted);
+    border-radius: 50%;
+    position: relative;
+  }
+  .method-option:has(input:checked) .method-option__radio { border-color: var(--color-primary); }
+  .method-option:has(input:checked) .method-option__radio::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: var(--color-primary);
+  }
+  .method-option__label { font-weight: 700; }
+  .method-picker .btn { margin-top: var(--space-2); }
+
+  .method-back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: none; border: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: var(--space-4);
+  }
+  .method-back svg { width: 20px; height: 20px; }
+  .method-current {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+  }
 }

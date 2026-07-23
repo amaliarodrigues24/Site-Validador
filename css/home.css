@@ -133,15 +133,95 @@
 }
 .schools__logo { height: 39px; width: auto; }
 
-/* ---------- responsivo ---------- */
-@media (max-width: 905px) {
-  .cards { grid-template-columns: 1fr; }
-  .secondary { grid-template-columns: 1fr; }
+/* No desktop a descrição reserva 2 linhas, para o "COMO VALIDAR" e os chips
+   alinharem entre os três cards, como no Figma. */
+@media (min-width: 906px) {
+  .card__text { min-height: calc(2 * var(--leading-normal) * 1em); }
 }
 
+/* ---------- responsivo ----------
+   Medido nos 5 frames do Figma (1440/1240/905/600/360) — node 93:8205. */
+
+/* ====== ≤905 ======
+   Os 3 cards continuam lado a lado, mas compactos: o ícone sobe para cima do
+   título e somem divisor, rótulo e chips. A faixa de baixo vira:
+   botões (metade) · alerta (metade) · faculdades ocupando a linha toda. */
+@media (max-width: 905px) {
+  .card { padding: var(--space-5); }
+  .card__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .card__divider,
+  .card__label,
+  .chips { display: none; }
+  .card__cta { padding-top: var(--space-6); }
+
+  .secondary {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6) var(--space-4);
+    align-items: start;
+  }
+  /* solta os botões e o alerta como itens diretos da grade */
+  .secondary__left { display: contents; }
+  .actions { flex-direction: column; }
+  .actions .btn { width: 100%; }
+  .schools { grid-column: 1 / -1; }   /* faculdades abaixo, largura total */
+}
+
+/* ====== ≤600 ======
+   Cards empilhados e em formato de linha: ícone + título à esquerda,
+   link à direita, descrição embaixo. O resto vira uma coluna só. */
 @media (max-width: 600px) {
   .intro { padding-block: var(--space-10) var(--space-8); }
-  .card { padding: var(--space-6); }
-  .actions { flex-direction: column; }
+
+  .cards { grid-template-columns: 1fr; }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "head cta"
+      "text cta";
+    column-gap: var(--space-5);
+    padding: var(--space-6);
+  }
+  .card__head {
+    grid-area: head;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+  .card__text { grid-area: text; }
+  .card__cta {
+    grid-area: cta;
+    align-self: center;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .secondary { grid-template-columns: 1fr; }
+  .schools { grid-column: auto; }
   .schools__list { justify-content: flex-start; }
+}
+
+/* ====== ≤480 (frame de 360) ======
+   O card perde o ícone e o link vira um botão redondo só com a seta. */
+@media (max-width: 480px) {
+  .card { padding: var(--space-5); }
+  .card__icon { display: none; }
+  .card__cta-text { display: none; }
+  .card__cta {
+    width: 36px; height: 36px;
+    flex: none;
+    justify-content: center;
+    background: var(--color-surface);
+    border: var(--border-width) solid var(--color-primary-border);
+    border-radius: 50%;
+  }
+  .card__cta .icon-arrow { width: 16px; height: 16px; }
+  .card__cta:hover .icon-arrow { transform: none; }
+
+  .schools__list { justify-content: center; }
 }

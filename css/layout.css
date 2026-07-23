@@ -25,6 +25,8 @@
   font-weight: 700;
   line-height: var(--leading-tight);
 }
+/* até 905 o Figma troca o título longo por "Site Validador" */
+.site-header__title--curto { display: none; }
 .site-header__subtitle {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
@@ -122,6 +124,7 @@
   padding-block: var(--space-10) var(--space-6);
   position: relative;
   z-index: 1;
+  border-radius: var(--radius-ul) var(--radius-ul) 0 0;   /* cantos de cima arredondados */
 }
 .site-footer__inner {
   display: grid;
@@ -129,11 +132,18 @@
   gap: var(--space-8) var(--space-6);
   align-items: center;
 }
-/* PLACEHOLDER: inverte o logo escuro para branco.
-   Trocar pelo arquivo branco quando exportado. */
-.site-footer__logo {
-  width: 224px; height: auto;
-  filter: brightness(0) invert(1);
+.site-footer__logo { width: 169px; height: auto; }
+
+/* Ilustração do diploma: só aparece de 905 para baixo, no lugar da pessoa.
+   Fica centrada e metade dela sai por cima da borda do rodapé. */
+.footer-diploma {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -16px;
+  width: 142px; height: auto;
+  z-index: 2;
 }
 .social { display: flex; gap: var(--space-4); justify-self: end; }
 .social__link {
@@ -163,48 +173,39 @@
 
 /* ---------- responsivo ----------
    Breakpoints do Figma: 1440 / 1240 / 905 / 600 / 360. */
+
+/* ≤905: título curto no cabeçalho e, no rodapé, a pessoa dá lugar ao diploma */
+@media (max-width: 905px) {
+  .site-header__title { display: none; }
+  .site-header__title--curto { display: block; }
+
+  /* some toda a área decorativa (círculo, seta e pessoa) */
+  .decor { display: none; }
+  .footer-diploma { display: block; }
+}
+
 @media (max-width: 600px) {
   .site-header { padding-block: var(--space-4); }
-  .site-header__inner { flex-wrap: wrap; gap: var(--space-3); }
-  .site-header__brand { border-right: 0; padding-right: 0; }
-  .site-header__titles { order: 3; flex-basis: 100%; }
-  .badge { margin-left: auto; font-size: 11px; gap: var(--space-2); }
-  .badge__icon { width: 32px; height: 32px; }
-  .badge__icon svg { width: 18px; height: 18px; }
+  .site-header__inner { gap: var(--space-4); }
+  .site-header__brand { padding-right: var(--space-4); }
+  .badge { display: none; }   /* o selo some a partir de 600 no Figma */
 
-  .decor { height: 180px; margin-bottom: 0; overflow: visible; }  /* no mobile não há excesso a cortar */
-  .decor__shape { width: 220px; }
-  .decor__person { width: 200px; top: 95px; left: calc(50% + 40px); }
-
+  /* o rodapé vira uma coluna; legenda e selo passam a caber empilhados */
   .site-footer__inner { grid-template-columns: 1fr; justify-items: start; }
   .social, .site-footer__badge { justify-self: start; }
 }
 
-/* ---------- selo de protótipo (só na versão publicada) ----------
-   Deixa claro num link público que este não é o validador oficial. */
-.proto-badge {
-  position: fixed;
-  left: 50%;
-  bottom: 16px;
-  transform: translateX(-50%);
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: #1d1d21;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
-  opacity: .92;
+/* ≤480 (frame de 360): rodapé todo centrado — logo, redes, selo e, por fim,
+   a legenda. A ordem no Figma inverte selo e legenda. */
+@media (max-width: 480px) {
+  .site-footer { padding-block: var(--space-12) var(--space-6); }
+  .site-footer__inner {
+    justify-items: center;
+    text-align: center;
+    gap: var(--space-6);
+  }
+  .site-footer__logo { width: 170px; }
+  .social { justify-self: center; }
+  .site-footer__badge { justify-self: center; order: 3; }
+  .site-footer__legal { order: 4; }
 }
-.proto-badge::before {
-  content: "";
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--color-accent, #ffad01);
-}
-.proto-badge:hover { opacity: 1; text-decoration: none; }

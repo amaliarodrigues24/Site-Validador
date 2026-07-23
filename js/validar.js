@@ -51,6 +51,40 @@ document.querySelectorAll('[role="tablist"]').forEach(function (lista) {
   });
 });
 
+// ---------- seletor de método em etapas (só no mobile ≤480) ----------
+// Reaproveita as abas: ao escolher e clicar em Continuar, "clica" na aba
+// correspondente (o que já mostra o formulário certo). Voltar volta à escolha.
+(function () {
+  var mob = document.querySelector('[data-method-mobile]');
+  if (!mob) return;
+
+  var painel = mob.closest('.panel');
+  var continuar = mob.querySelector('[data-method-continue]');
+  var voltar = mob.querySelector('[data-method-back]');
+  var atual = mob.querySelector('[data-method-current]');
+  var radios = Array.from(mob.querySelectorAll('input[name="metodo"]'));
+  var MAPA = { registro: 'tab-registro', codigo: 'tab-codigo' };
+
+  radios.forEach(function (r) {
+    r.addEventListener('change', function () {
+      continuar.setAttribute('aria-disabled', 'false');
+    });
+  });
+
+  continuar.addEventListener('click', function () {
+    if (continuar.getAttribute('aria-disabled') === 'true') return;
+    var escolhido = mob.querySelector('input[name="metodo"]:checked');
+    if (!escolhido) return;
+    var aba = document.getElementById(MAPA[escolhido.value]);
+    if (aba) { aba.click(); atual.textContent = aba.textContent; }
+    painel.classList.add('panel--picked');
+  });
+
+  voltar.addEventListener('click', function () {
+    painel.classList.remove('panel--picked');
+  });
+})();
+
 // ---------- formulário ----------
 document.querySelectorAll('[data-form]').forEach(function (form) {
   var botao = form.querySelector('button[type="submit"]');

@@ -4,15 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verificando… — Validador Cogna Educação</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/carregando.css">
 </head>
 <body>
+<a class="proto-badge" href="https://github.com" target="_blank" rel="noopener">PROTÓTIPO — não é o site oficial da Cogna</a>
 
 <header class="site-header">
   <div class="container site-header__inner">
@@ -20,6 +19,7 @@
       <img src="assets/logo-cogna.svg" alt="Cogna Educação" width="112" height="40">
     </a>
     <div class="site-header__titles">
+      <p class="site-header__title site-header__title--curto">Site Validador</p>
       <p class="site-header__title">Validador de Diploma, Histórico Escolar e Currículo do Curso</p>
       <p class="site-header__subtitle">Verifique a Autenticidade: Diplomas das Instituições Cogna</p>
     </div>
@@ -105,9 +105,12 @@
 </main>
 
 <footer class="site-footer">
+  <!-- ilustração do diploma: aparece no lugar da pessoa a partir de 905 -->
+  <img class="footer-diploma" src="assets/diploma-rolo.svg" alt="" aria-hidden="true"
+       width="142" height="66">
   <div class="container site-footer__inner">
-    <img class="site-footer__logo" src="assets/logo-cogna.svg" alt="Cogna Educação"
-         width="224" height="80">
+    <img class="site-footer__logo" src="assets/logo-cogna-branco.svg" alt="Cogna"
+         width="169" height="60">
     <ul class="social">
       <li><a class="social__link" href="#" aria-label="Instagram da Cogna">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">

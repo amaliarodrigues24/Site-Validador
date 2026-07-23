@@ -20,6 +20,7 @@
       <img src="assets/logo-cogna.svg" alt="Cogna Educação" width="112" height="40">
     </a>
     <div class="site-header__titles">
+      <p class="site-header__title site-header__title--curto">Site Validador</p>
       <p class="site-header__title">Validador de Diploma, Histórico Escolar e Currículo do Curso</p>
       <p class="site-header__subtitle">Verifique a Autenticidade: Diplomas das Instituições Cogna</p>
     </div>
@@ -105,6 +106,40 @@
                   aria-controls="painel-registro" aria-selected="true">Número de Registro</button>
           <button class="tabs__tab" role="tab" id="tab-codigo"
                   aria-controls="painel-codigo" aria-selected="false">Código de Validação</button>
+        </div>
+
+        <!-- Seletor de método em duas etapas: só aparece em telas ≤360.
+             No desktop/tablet as abas acima cuidam da troca. -->
+        <div class="method-mobile" data-method-mobile>
+          <button type="button" class="method-back" data-method-back>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M11 18l-6-6 6-6"/>
+            </svg>
+            Voltar
+          </button>
+          <p class="method-current" data-method-current>Número de Registro</p>
+
+          <div class="method-picker">
+            <label class="method-option">
+              <input type="radio" name="metodo" value="registro">
+              <span class="method-option__radio" aria-hidden="true"></span>
+              <span class="method-option__label">Número de Registro</span>
+            </label>
+            <label class="method-option">
+              <input type="radio" name="metodo" value="codigo">
+              <span class="method-option__radio" aria-hidden="true"></span>
+              <span class="method-option__label">Código de Validação</span>
+            </label>
+            <button type="button" class="btn btn--primary btn--block" data-method-continue
+                    aria-disabled="true">
+              Continuar
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
         <!-- ---------- método 1: número de registro ---------- -->
@@ -222,9 +257,12 @@
 </main>
 
 <footer class="site-footer">
+  <!-- ilustração do diploma: aparece no lugar da pessoa a partir de 905 -->
+  <img class="footer-diploma" src="assets/diploma-rolo.svg" alt="" aria-hidden="true"
+       width="142" height="66">
   <div class="container site-footer__inner">
-    <img class="site-footer__logo" src="assets/logo-cogna.svg" alt="Cogna Educação"
-         width="224" height="80">
+    <img class="site-footer__logo" src="assets/logo-cogna-branco.svg" alt="Cogna"
+         width="169" height="60">
     <ul class="social">
       <li><a class="social__link" href="#" aria-label="Instagram da Cogna">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
