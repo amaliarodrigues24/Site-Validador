@@ -74,8 +74,10 @@
            width="185" height="144">
     </section>
 
-    <!-- ---------- downloads ---------- -->
-    <div class="downloads">
+    <!-- ---------- downloads ----------
+         Duas variantes: a padrão (representação + XML) e a de certificado
+         (um botão só). O JS mostra uma conforme ?cenario= na URL. -->
+    <div class="downloads" data-downloads="padrao">
       <a class="btn btn--primary" href="#" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -85,6 +87,17 @@
       </a>
       <a class="downloads__link" href="#" download>Baixar Arquivo XML - Diploma Digital</a>
       <span class="downloads__note">— arquivo para dupla validação do documento.</span>
+    </div>
+
+    <div class="downloads" data-downloads="certificado" hidden>
+      <a class="btn btn--primary" href="#" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="9" r="6"/>
+          <path d="M9 14.5 8 21l4-2 4 2-1-6.5"/>
+        </svg>
+        Baixar Certificado de Validação
+      </a>
     </div>
 
     <!-- ---------- tiras de dados ---------- -->

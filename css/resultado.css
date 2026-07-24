@@ -92,6 +92,7 @@
 }
 
 /* ---------- downloads ---------- */
+.downloads[hidden] { display: none; }   /* o hidden precisa vencer o display:flex */
 .downloads {
   display: flex;
   align-items: center;

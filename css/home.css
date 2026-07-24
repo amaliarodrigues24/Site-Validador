@@ -133,10 +133,18 @@
 }
 .schools__logo { height: 39px; width: auto; }
 
-/* No desktop a descrição reserva 2 linhas, para o "COMO VALIDAR" e os chips
-   alinharem entre os três cards, como no Figma. */
+/* No desktop (card completo) a descrição reserva 2 linhas, para o "COMO VALIDAR"
+   e os chips alinharem entre os três cards. E o CTA vira um botão preenchido. */
 @media (min-width: 906px) {
   .card__text { min-height: calc(2 * var(--leading-normal) * 1em); }
+
+  .card__cta {
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-radius: var(--radius-sm);
+  }
+  .card__cta:hover { filter: brightness(1.1); }
 }
 
 /* ---------- responsivo ----------

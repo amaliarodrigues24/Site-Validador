@@ -1,17 +1,22 @@
 /* Tela de resultado — variante do D.O.U, recolher blocos, copiar código e revelar CPF. */
 
-// ---------- qual card do D.O.U mostrar ----------
-// ?cenario=pendente  -> registro ainda não publicado
-// sem parâmetro      -> publicado
+// ---------- variantes por ?cenario= ----------
+// publicado   (padrão): D.O.U publicado  + downloads padrão
+// pendente            : D.O.U pendente   + downloads padrão
+// certificado         : D.O.U publicado  + botão único de certificado
 (function () {
-  var cards = document.querySelectorAll('[data-dou]');
-  if (!cards.length) return;
+  var cenario = new URLSearchParams(location.search).get('cenario');
 
-  var pedido = new URLSearchParams(location.search).get('cenario');
-  var escolhido = pedido === 'pendente' ? 'pendente' : 'publicado';
+  // card do D.O.U: só "pendente" muda; os demais ficam publicado
+  var dou = cenario === 'pendente' ? 'pendente' : 'publicado';
+  document.querySelectorAll('[data-dou]').forEach(function (card) {
+    card.hidden = card.dataset.dou !== dou;
+  });
 
-  cards.forEach(function (card) {
-    card.hidden = card.dataset.dou !== escolhido;
+  // bloco de downloads: "certificado" mostra o botão único
+  var downloads = cenario === 'certificado' ? 'certificado' : 'padrao';
+  document.querySelectorAll('[data-downloads]').forEach(function (bloco) {
+    bloco.hidden = bloco.dataset.downloads !== downloads;
   });
 })();
 

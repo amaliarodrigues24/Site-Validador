@@ -11,7 +11,8 @@ var CENARIOS = {
     '1': 'carregando.html?destino=resultado-diploma.html%3Fcenario%3Dpublicado',
     '2': 'carregando.html?destino=resultado-diploma.html%3Fcenario%3Dpendente',
     '3': 'carregando.html?destino=resultado-diploma-anulado.html',
-    '4': 'carregando.html?destino=resultado-diploma-nao-existente.html'
+    '4': 'carregando.html?destino=resultado-diploma-nao-existente.html',
+    '5': 'carregando.html?destino=resultado-diploma.html%3Fcenario%3Dcertificado'
   },
   historico: {
     // passa pela tela de carregamento antes do resultado
