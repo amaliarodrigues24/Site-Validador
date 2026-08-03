@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resultado da validação — Diploma Válido — Cogna Educação</title>
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/layout.css">
@@ -12,7 +14,6 @@
 <link rel="stylesheet" href="css/resultado.css">
 </head>
 <body>
-<a class="proto-badge" href="https://github.com" target="_blank" rel="noopener">PROTÓTIPO — não é o site oficial da Cogna</a>
 
 <header class="site-header">
   <div class="container site-header__inner">
@@ -137,7 +138,7 @@
                 Dados sensíveis parcialmente ocultos
               </p>
             </div>
-            <button class="block__toggle" type="button" aria-expanded="true">
+            <button class="block__toggle" type="button" aria-expanded="false">
               <span class="sr-only">Recolher seção</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -145,7 +146,7 @@
               </svg>
             </button>
           </div>
-          <div class="block__body">
+          <div class="block__body" hidden>
             <dl class="facts">
               <div class="fact"><dt>Nome Completo</dt><dd>Guilherme Silveira</dd></div>
               <div class="fact"><dt>Naturalidade</dt><dd>São Paulo, SP</dd></div>
@@ -168,7 +169,7 @@
         <section class="block" data-block>
           <div class="block__head">
             <h2 class="block__title">Diploma</h2>
-            <button class="block__toggle" type="button" aria-expanded="true">
+            <button class="block__toggle" type="button" aria-expanded="false">
               <span class="sr-only">Recolher seção</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -176,7 +177,7 @@
               </svg>
             </button>
           </div>
-          <div class="block__body">
+          <div class="block__body" hidden>
             <dl class="facts">
               <div class="fact"><dt>Data de Registro</dt><dd>04/09/2025</dd></div>
               <div class="fact"><dt>Data de Expedição</dt><dd>30/10/2025</dd></div>
@@ -188,7 +189,7 @@
         <section class="block" data-block>
           <div class="block__head">
             <h2 class="block__title">Dados do curso</h2>
-            <button class="block__toggle" type="button" aria-expanded="true">
+            <button class="block__toggle" type="button" aria-expanded="false">
               <span class="sr-only">Recolher seção</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -196,7 +197,7 @@
               </svg>
             </button>
           </div>
-          <div class="block__body">
+          <div class="block__body" hidden>
             <dl class="facts">
               <div class="fact"><dt>Nome do Curso</dt><dd>Design</dd></div>
               <div class="fact"><dt>Grau Conferido</dt><dd>Bacharelado</dd></div>
@@ -214,7 +215,7 @@
         <section class="block" data-block>
           <div class="block__head">
             <h2 class="block__title">Instituição de ensino emissora (faculdade)</h2>
-            <button class="block__toggle" type="button" aria-expanded="true">
+            <button class="block__toggle" type="button" aria-expanded="false">
               <span class="sr-only">Recolher seção</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -222,7 +223,7 @@
               </svg>
             </button>
           </div>
-          <div class="block__body">
+          <div class="block__body" hidden>
             <dl class="facts">
               <div class="fact"><dt>Nome</dt><dd>Anhanguera</dd></div>
               <div class="fact"><dt>Código E-MEC</dt><dd>570</dd></div>
@@ -240,7 +241,7 @@
         <section class="block" data-block>
           <div class="block__head">
             <h2 class="block__title">Instituição de ensino registradora</h2>
-            <button class="block__toggle" type="button" aria-expanded="true">
+            <button class="block__toggle" type="button" aria-expanded="false">
               <span class="sr-only">Recolher seção</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -248,7 +249,7 @@
               </svg>
             </button>
           </div>
-          <div class="block__body">
+          <div class="block__body" hidden>
             <dl class="facts">
               <div class="fact"><dt>Nome</dt><dd>Anhanguera</dd></div>
               <div class="fact"><dt>Código E-MEC</dt><dd>570</dd></div>
