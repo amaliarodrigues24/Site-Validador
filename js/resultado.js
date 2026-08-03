@@ -1,14 +1,15 @@
 /* Tela de resultado — variante do D.O.U, recolher blocos, copiar código e revelar CPF. */
 
 // ---------- variantes por ?cenario= ----------
-// publicado   (padrão): D.O.U publicado  + downloads padrão
-// pendente            : D.O.U pendente   + downloads padrão
-// certificado         : D.O.U publicado  + botão único de certificado
+// publicado   (padrão): D.O.U publicado    + downloads padrão
+// pendente            : D.O.U pendente     + downloads padrão
+// nao-aplica          : D.O.U não se aplica + downloads padrão
+// certificado         : D.O.U publicado    + botão único de certificado
 (function () {
   var cenario = new URLSearchParams(location.search).get('cenario');
 
-  // card do D.O.U: só "pendente" muda; os demais ficam publicado
-  var dou = cenario === 'pendente' ? 'pendente' : 'publicado';
+  // card do D.O.U: "pendente" e "nao-aplica" têm card próprio; o resto é publicado
+  var dou = cenario === 'pendente' || cenario === 'nao-aplica' ? cenario : 'publicado';
   document.querySelectorAll('[data-dou]').forEach(function (card) {
     card.hidden = card.dataset.dou !== dou;
   });

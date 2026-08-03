@@ -287,6 +287,15 @@
   color: var(--color-warning-icon);
 }
 
+/* variante "Não se Aplica" — diploma emitido antes da obrigatoriedade do DOU.
+   Cabeçalho cinza neutro e pill cinza (não é positivo nem de alerta). */
+.dou--nao-aplica .dou__head { background: var(--color-divider); }
+.dou--nao-aplica .pill {
+  border-color: var(--color-input-border);
+  color: var(--color-text-muted);
+}
+.dou__text { font-size: var(--text-sm); }
+
 .side-note {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
