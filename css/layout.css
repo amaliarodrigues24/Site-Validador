@@ -92,13 +92,14 @@
    do rodapé e a ilustração NA FRENTE dele. */
 .decor {
   position: relative;
-  /* Estende a área até a base do rodapé (281 da decor + 197 do rodapé) e recua
+  /* Estende a área até a base do rodapé (281 da decor + a altura do rodapé) e recua
      com margem negativa, para o rodapé ficar exatamente na mesma posição.
      overflow:clip corta só o pedaço da ilustração que passaria do fim da página —
-     sem mover a ilustração. */
-  height: 478px;
+     sem mover a ilustração. --footer-h precisa acompanhar a altura real do rodapé. */
+  --footer-h: 177px;
+  height: calc(281px + var(--footer-h));
   margin-top: var(--space-6);
-  margin-bottom: -197px;
+  margin-bottom: calc(-1 * var(--footer-h));
   overflow: clip;
 }
 .decor__shape {
