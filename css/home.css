@@ -140,11 +140,10 @@
 
   .card__cta {
     padding: var(--space-4) var(--space-6);
-    background: var(--color-primary);
-    color: var(--color-on-primary);
+    border: var(--border-width) solid var(--color-primary);
     border-radius: var(--radius-sm);
+    color: var(--color-primary);
   }
-  .card__cta:hover { filter: brightness(1.1); }
 }
 
 /* ---------- responsivo ----------
