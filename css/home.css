@@ -138,10 +138,11 @@
 @media (min-width: 906px) {
   .card__text { min-height: calc(2 * var(--leading-normal) * 1em); }
 
-  /* o respiro vem dos chips; o botão mantém margin-top:auto do base,
-     que o alinha na base dos três cards */
-  .chips { margin-bottom: var(--space-8); }
+  /* gap fixo de 24px entre os chips e o botão, como no Figma (o botão não
+     é empurrado para a base — a descrição de 2 linhas mantém os cards com a
+     mesma altura, então os três botões alinham naturalmente). */
   .card__cta {
+    margin-top: var(--space-6);
     padding: var(--space-4) var(--space-6);
     border: var(--border-width) solid var(--color-primary);
     border-radius: var(--radius-sm);
